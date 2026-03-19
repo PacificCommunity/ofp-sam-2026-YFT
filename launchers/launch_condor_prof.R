@@ -6,7 +6,7 @@ remote_host <- Sys.getenv("NOU_CONDOR")
 github_pat <- Sys.getenv("GIT_PAT")
 github_username <- "kyuhank"
 github_org <- "PacificCommunity"
-github_repo <- "ofp-sam-2026-bet"
+github_repo <- "ofp-sam-2026-yft"
 docker_image <- "ghcr.io/pacificcommunity/bet-2026:v1.2"
 condor_memory <- "12GB"
 condor_disk <- "10GB"

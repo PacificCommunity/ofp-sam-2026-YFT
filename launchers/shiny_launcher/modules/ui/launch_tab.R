@@ -207,7 +207,7 @@ launch_tab_ui <- function() {
                           value = "PacificCommunity"),
                 
                 textInput("github_repo", "GitHub Repository:", 
-                          value = "ofp-sam-2026-bet"),
+                          value = "ofp-sam-2026-yft"),
                 
                 textInput("docker_image", "Docker Image:", 
                           value = "ghcr.io/pacificcommunity/bet-2026:v1.5"),

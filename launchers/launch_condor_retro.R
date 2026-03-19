@@ -10,7 +10,7 @@ remote_host <- Sys.getenv("NOU_CONDOR")                       # Remote server ad
 github_pat <- Sys.getenv("GIT_PAT")                           # GitHub Personal Access Token (e.g., ghp_....)
 github_username <- "kyuhank"                                  # GitHub username (e.g., "kyuhank")
 github_org <- "PacificCommunity"                              # GitHub organisation name (e.g., "PacificCommunity")
-github_repo <- "ofp-sam-2026-bet"                             # GitHub repository name (e.g., "ofp-sam-docker4mfcl-example")
+github_repo <- "ofp-sam-2026-yft"                             # GitHub repository name (e.g., "ofp-sam-docker4mfcl-example")
 docker_image <- "ghcr.io/pacificcommunity/bet-2026:v1.2"      # Docker image to use (e.g., "kyuhank/skj2025:1.0.4")
 condor_memory <- "12GB"                                        # Memory request for the Condor job (e.g., "6GB")
 condor_disk <- "10GB"
