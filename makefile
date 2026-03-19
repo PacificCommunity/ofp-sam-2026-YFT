@@ -29,7 +29,7 @@ retro:
 
 test:
 	Rscript tests/run_tests.R
-	
+
 TagExclusion:
 	Rscript sensitivities/TagExclusion.R
 
@@ -50,15 +50,15 @@ prof-init-map-model:
 	model_name=$(MODEL) model_dir=model/$(MODEL) base_dir=$(BASE_DIR) prof_init_map_out=$(OUT) Rscript tools/build_prof_init_map.R
 
 run: model prof
-	
+
 plot:
 	Rscript -e "rmarkdown::render('plot/plots.rmd')"
 
 prepaw:
 	quarto render presentation/prepaw/presentation.qmd
-	
+
 report:
-	quarto render report/bet-2026.qmd
+	quarto render report/yft-2026.qmd
 
 docker-model:
 	docker run --rm --user "$(DOCKER_USER)" -v "$(CURDIR):$(WORKDIR)" -w $(WORKDIR) $(DOCKER_IMAGE) Rscript runners/run_model.R
@@ -94,17 +94,14 @@ docker-prof-init-map:
 	docker run --rm --user "$(DOCKER_USER)" -v "$(CURDIR):$(WORKDIR)" -w $(WORKDIR) $(DOCKER_IMAGE) Rscript tools/build_prof_init_map.R
 
 docker-run: docker-model docker-prof
-	
+
 docker-plot:
 	docker run --rm --user "$(DOCKER_USER)" -v "$(CURDIR):$(WORKDIR)" -w $(WORKDIR) $(DOCKER_IMAGE) Rscript -e "rmarkdown::render('plot/plots.rmd')"
 
 docker-report:
 	docker run --rm -v "$(CURDIR):$(WORKDIR)" -w $(WORKDIR) $(stitch-hessian docker-run docker-model docker-prof docker-jitter docker-hessian docker-collate-hessian docker-stitch
 
-	
 .PHONY: plot run model prof prof_chain jitter jitter_smoke jitter_smoke_hessian hessian retro test collate-hessian stitch-hessian stitch-hessian-all prof-init-map prof-init-map-model docker-run docker-model docker-prof docker-jitter docker-jitter-smoke docker-jitter-smoke-hessian docker-hessian docker-retro docker-collate-hessian docker-stitch-hessian docker-stitch-hessian-all docker-prof-init-map docker-plot prepaw report docker-report
-
-
 
 # =============================================================================
 # SHINY APP TARGETS
