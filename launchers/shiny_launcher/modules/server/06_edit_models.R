@@ -246,7 +246,7 @@
       textAreaInput("edit_mfcl_args", NULL, 
                     value = mfcl_args,
                     rows = 2, width = "100%",
-                    placeholder = "bet.frq 11.par 12.par -switch 2 1 1 10000 (or leave empty for ./doitall.sh)"),
+                    placeholder = "yft.frq 11.par 12.par -switch 2 1 1 10000 (or leave empty for ./doitall.sh)"),
       p(style = "color: #666; font-size: 11px; margin-top: -10px;",
         "💡 If arguments start with './' (like ./doitall.sh), only arguments will be used as command"),
       

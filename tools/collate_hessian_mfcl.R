@@ -268,7 +268,7 @@ cat("==============================================\n")
 cat("Step 2: Preparing component files\n")
 cat("==============================================\n")
 
-## Get root filename from frq_file (e.g., "bet" from "bet.frq")
+## Get root filename from frq_file (e.g., "yft" from "yft.frq")
 root_name <- sub("\\.frq$", "", frq_file)
 
 ## Find and copy .hes files with proper naming convention
@@ -287,7 +287,7 @@ for(i in seq_along(part_infos)) {
   ## Source file
   src_hes <- hes_files[1]
   
-  ## Target filename: root.hes_n (e.g., bet.hes_1, bet.hes_2, ...)
+  ## Target filename: root.hes_n (e.g., yft.hes_1, yft.hes_2, ...)
   target_hes <- file.path(hessian_dir, paste0(root_name, ".hes_", i))
   
   ## Copy file

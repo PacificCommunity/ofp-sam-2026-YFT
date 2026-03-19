@@ -130,7 +130,7 @@ cat("Model directory      :", model_dir, "\n")
 
 ## When using phase-based legacy scripts (doitall.sh), copied .par files
 ## can short-circuit phases and silently skip optimization. Remove all copied
-## .par variants to force a fresh run from bet.ini in the model directory.
+## .par variants to force a fresh run from yft.ini in the model directory.
 if (identical(mfcl_commands_raw, "./doitall.sh")) {
   copied_pars <- list.files(model_dir, pattern = "\\.par([0-9]+)?$", full.names = TRUE)
   if (length(copied_pars) > 0) {
